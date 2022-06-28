@@ -1,0 +1,25 @@
+<div class="container">
+    <br>
+    <h1>Productos</h1>
+    <br>
+    <a class="btn btn-success" [routerLink]="[ '/agregar-productos']">Añadir nuevo producto</a>
+    <br>
+    <br>
+    <table class="table table-bordered">
+        <tr>
+            <td>Nombre</td>
+            <td>Precio</td>
+            <td>Stock</td>
+            <td></td>
+        </tr>
+        <tr *ngFor="let item of productos">
+            <td>{{ item.NombreProducto }}</td>
+            <td>{{ item.PrecioUnitario }}</td>
+            <td>{{ item.Stock }}</td>
+            <td>
+                <a class="btn btn-sm btn-outline-warning" [routerLink]="[ '/editar-productos', item.ID ]">Editar</a>
+                <a class="btn btn-sm btn-outline-danger" [routerLink]="[ '/eliminar-productos', item.ID ]">Eliminar</a>
+            </td>
+        </tr>
+    </table>
+</div>

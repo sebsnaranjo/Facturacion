@@ -1,0 +1,44 @@
+<div class="container">
+    <br>
+    <h2>Eliminar producto</h2>
+    <br>
+    <div class="form-row" *ngIf="!showMsg">
+        <div class="alert alert-danger col-md-12" role="alert">
+            Cuidado, eliminarás un producto.
+            <br>
+            <br>
+            <div class="btn-group" role="group">
+                <button class="btn btn-danger btn-sm" (click)="delete()">Eliminar</button>
+                <a class="btn btn-primary btn-sm" [routerLink]="[ '/lista-productos']">Ver productos</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="form-row" *ngIf="showMsg">
+        <div class="alert alert-{{type}} col-md-12" role="alert">
+            {{msg}}
+            <a class="btn btn-outline-primary btn-sm" [routerLink]="[ '/lista-productos']">Ver productos</a>
+        </div>
+    </div>
+
+    <form #productoForm="ngForm" *ngIf="producto">
+        <div class="form-row">
+            <div class="col-md-4">
+                <label>Nombre:</label>
+                <input type="text" id="nombreProducto" name="nombreProducto" placeholder="Ingrese el nombre" class="form-control"
+                    #nombreProducto [(ngModel)]="producto.NombreProducto">
+            </div>
+            <div class="col-md-4">
+                <label>Precio:</label>
+                <input type="text" id="precioUnitario" name="precioUnitario" placeholder="Ingrese el precio" class="form-control"
+                    #precioUnitario [(ngModel)]="producto.PrecioUnitario">
+            </div>
+            <div class="col-md-4">
+                <label>Stock:</label>
+                <input type="text" id="stock" name="stock" placeholder="Ingrese la cantidad" class="form-control"
+                    #stock [(ngModel)]="producto.Stock">
+            </div>
+        </div>
+        <br>
+    </form>
+</div>
