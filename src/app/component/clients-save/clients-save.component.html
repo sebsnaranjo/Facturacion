@@ -1,0 +1,41 @@
+<div class="container">
+    <br>
+    <h2>Agregar cliente</h2>
+    <div class="form-row" *ngIf="showMsg">
+        <div class="alert alert-{{type}} col-md-12" role="alert">
+            {{msg}}
+        </div>
+    </div>
+
+    <form #clienteForm="ngForm">
+        <div class="form-row">
+            <div class="col-md-4">
+                <label>Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre" class="form-control"
+                    #nombre [(ngModel)]="cliente.Nombre">
+            </div>
+            <div class="col-md-4">
+                <label>Apellido:</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Ingrese el apellido" class="form-control"
+                    #apellido [(ngModel)]="cliente.Apellido">
+            </div>
+            <div class="col-md-4">
+                <label>Edad:</label>
+                <input type="text" id="edad" name="edad" placeholder="Ingrese la edad" class="form-control"
+                    #edad [(ngModel)]="cliente.Edad">
+            </div>
+            <div class="col-md-4">
+                <label>Email:</label>
+                <input type="text" id="email" name="email" placeholder="Ingrese el email" class="form-control"
+                    #email [(ngModel)]="cliente.Email">
+            </div>
+        </div>
+        <br>
+        <!-- <button class="btn btn-success btn-sm" (click)="save()">Guardar</button> -->
+        <dx-button text="Guardar" (onClick)="save()"></dx-button>
+        <br>
+        <br>
+        <!-- <a class="btn btn-outline-primary btn-sm" [routerLink]="[ '/lista-clientes']">Ver clientes</a> -->
+        <dx-button text="Ver clientes" (onClick)="redirect()"></dx-button>
+    </form>
+</div>

@@ -10,6 +10,10 @@ import { ProductSaveComponent } from './component/product-save/product-save.comp
 import { FormsModule } from '@angular/forms';
 import { ProductEditComponent } from './component/product-edit/product-edit.component';
 import { ProductDeleteComponent } from './component/product-delete/product-delete.component';
+import { DevExtremeModule, DxDataGridModule } from 'devextreme-angular';
+import { ClientsListComponent } from './component/clients-list/clients-list.component';
+import { ClientesService } from './service/clientes.service';
+import { ClientsSaveComponent } from './component/clients-save/clients-save.component';
 
 
 
@@ -20,16 +24,21 @@ import { ProductDeleteComponent } from './component/product-delete/product-delet
     ProductsListComponent,
     ProductSaveComponent,
     ProductEditComponent,
-    ProductDeleteComponent
+    ProductDeleteComponent,
+    ClientsListComponent,
+    ClientsSaveComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    DevExtremeModule,
+    DxDataGridModule
   ],
   providers: [
-    ProductoService
+    ProductoService,
+    ClientesService
   ],
   bootstrap: [AppComponent]
 })

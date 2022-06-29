@@ -1,0 +1,11 @@
+<div class="container">
+    <br>
+    <br>
+    <dx-button text="Agregar clientes" (onClick)="redirect()"></dx-button>
+    <dx-data-grid [dataSource]="dataSource" [height]="600" [showBorders]="true">
+        <dxo-editing mode="row" [allowAdding]="true" [allowUpdating]="true" [allowDeleting]="true"></dxo-editing>
+    </dx-data-grid>
+    <br>
+    <br>
+    <br>
+</div>
